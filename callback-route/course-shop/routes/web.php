@@ -8,8 +8,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/courses', [CourseController::class, 'index']);
-Route::get('/courses', ['App\Http\Controllers\CourseController', 'index']);
-
+Route::get('/courses', [CourseController::class, 'index']);
 Route::get('/courses/{id}', [CourseController::class, 'show']);
 Route::post('/payment/callback', [PaymentController::class, 'callback']);
