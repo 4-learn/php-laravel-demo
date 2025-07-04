@@ -10,8 +10,15 @@ Route::get('/', function () {
 
 use App\Models\Course;
 
+/*
 Route::get('/courses', function () {
     return Course::all();
+});
+*/
+
+Route::get('/courses', function () {
+    $courses = Course::all();
+    return view('courses.index', compact('courses'));
 });
 
 Route::get('/courses/{id}', [CourseController::class, 'show']);
